@@ -43,7 +43,7 @@ def getAttachment(attachmentFilePath):
     if mainType == 'text':
         attachment = MIMEText(file.read())
     elif mainType == 'message':
-        attachment = email.message_from_file(file)
+        attachment = smtplib.email.message_from_file(file)
     elif mainType == 'image':
         attachment = MIMEImage(file.read(),_subType=subType)
     elif mainType == 'audio':
